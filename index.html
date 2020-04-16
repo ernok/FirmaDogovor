@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Firma Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Add Firma Form</h1> <!--Full Complete--> 
+                <form action="validation-form/add_firm.php" method="post">
+                    <input type="text" class="form--control" name="name" id="name" placeholder="Enter name"><br><br>
+                    <input type="text" class="form--control" name="shef" id="shef" placeholder="Enter shef"><br><br>
+                    <input type="text" class="form--control" name="address" id="address" placeholder="Enter address"><br><br>
+                    <button class="btn btn-success" type="submit">Add Firma</button>
+                </form>
+            </div>
+            <div class="col">
+                <h1>Add Dogovor Form</h1>  <!--Full Complete-->
+                <form action="validation-form/add_dogovor.php" method="post">
+                    <input type="text" class="form--control" name="id_firm" id="id_firm" placeholder="Id firm"><br><br>
+                    <input type="text" class="form--control" name="named" id="named" placeholder="Name of the firm"><br><br>
+                    <input type="text" class="form--control" name="numberd" id="numberd" placeholder="Number of days"><br><br>
+                    <input type="text" class="form--control" name="sumd" id="sumd" placeholder="Sum in day"><br><br>
+                    <input type="text" class="form--control" name="datastart" id="datastart" placeholder="Start date(YYYY-MM-DD)"><br><br>
+                    <input type="text" class="form--control" name="avans" id="avans" placeholder="Avans"><br><br>
+                    <button class="btn btn-success" type="submit">Add Dogovor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   <br><hr color="green" width="1500" >
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Change Firma Form</h1> <!--Full Complete-->
+                <form action="validation-form/change_firm.php" method="post">
+                    <input type="text" class="form--control" name="id_firm" id="id_firm" placeholder="Firm id (id_firm)"><br><br>
+                    <h1>Enter your change </h1><br>
+                    <input type="text" class="form--control" name="name" id="name" placeholder="Enter name "><br><br>
+                    <input type="text" class="form--control" name="shef" id="shef" placeholder="Enter shef (optinal)"><br><br>
+                    <input type="text" class="form--control" name="address" id="address" placeholder="Enter address (optinal)"><br><br>
+                    <button class="btn btn-success" type="submit">Change Firma</button>
+                </form>
+            </div>
+            <div class="col">
+                <h1>Change Dogovor Form</h1>  <!-- Full complete -->
+                <form action="validation-form/change_dogovor.php" method="post">
+                    <input type="text" class="form--control" name="id_in" id="id_in" placeholder="Dogovor id (id_in)"><br><br>
+                    <h1>Enter your change </h1><br>
+                    <input type="text" class="form--control" name="id_firm" id="id_firm" placeholder="Id firm"><br><br>
+                    <input type="text" class="form--control" name="named" id="named" placeholder="Name of the firm"><br><br>
+                    <input type="text" class="form--control" name="numberd" id="numberd" placeholder="Number of days "><br><br>
+                    <input type="text" class="form--control" name="sumd" id="sumd" placeholder="Sum in day"><br><br>
+                    <input type="text" class="form--control" name="datastart" id="datastart" placeholder="Start date(YYYY-MM-DD)"><br><br>
+                    <input type="text" class="form--control" name="avans" id="avans" placeholder="Avans"><br><br>
+                    <button class="btn btn-success" type="submit">Change Dogovor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br><hr color="green" width="1500">
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Search firm </h1>  <!-- Full Complete  -->
+                <form action="validation-form/search_firm.php" method="post">
+                    <input type="text" class="form--control" name="letterForSearch" id="letterForSearch" placeholder="First letter for search"><br><br>
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="col">
+                <h1>Firm List</h1>  <!--Full Complete-->
+                <form action="validation-form/list_firm.php" method="post">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br><hr color="green" width="1500">
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Check avans percent relatively all sum</h1>  <!-- Full Complete  -->
+                <form action="validation-form/check_percent_avans.php" method="post">
+                    <input type="text" class="form--control" name="id_in" id="id_in" placeholder="Dogovor id (id_in)"><br><br>
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="col">
+                <h1>Check dogovor's finish date</h1>  <!--Full Complete-->
+                <form action="validation-form/check_date.php" method="post">
+                    <input type="text" class="form--control" name="id_in" id="id_in" placeholder="Dogovor id (id_in)"><br><br>
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Разработать 3 запроса для договоров. Для работы с договорами использовать PDO.-->
+    <!--1) Вывод процентного соотношения общей суммы к авансу
+    SELECT id_in, (`avans` *100) / `sumd` AS persents FROM `dogovor` -->
+    
+
+    </body>
+</html>
